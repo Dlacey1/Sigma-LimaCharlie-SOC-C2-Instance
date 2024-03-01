@@ -1,28 +1,33 @@
 
 
-  <h1>Project: Exploring Attack and Detection with Lima Charlie, Sigma, & Sliver</h1>
+  <h1>SOC Attack and Detection with Lima Charlie, Sigma, & Sliver</h1>
 
   <h2>Introduction</h2>
-  <p>This  project focuses on the exploration of deploying and analyzing a cyber-attack scenario using Lima Charlie. The blog series, consisting of Part 1 and Part 2, provides detailed instructions and insights into the process. Part 1 covers the initial setup of the environment, including the installation of Sliver to emulate an attacker. Part 2 delves into the practical aspects of the attack, from creating a command and control (C2) payload to analyzing the system traffic in Lima Charlie.</p>
+  <p>Recently, to optimize telemetry storage costs for my organization, I began researching alternatives to traditional SIEMs, which led me to look into Lima Charlie. Lima Charlie is a solution that offers endpoint detection and response but with free storage for up to one year's worth of data. 
+</p>
+<p>To evaluate my understanding of Lima Charlie, I followed the SOC Analyst home lab instructions from Eric Capuano's blog series, which can be found here. Eric's blog series was easy to follow and taught many hands-on practical cybersecurity skills used in the field.
+</p>
 
-  <h2>Environment</h2>
-  <p>The project utilizes the following setup for simulation:</p>
+  <h2>Skills Covered</h2>
   <ul>
-    <li>Attacker Machine: Linux Ubuntu Server</li>
-    <li>Victim Machine: Windows 10</li>
-    <li>Analysis Tool: Lima Charlie</li>
-    <li>Attack Tool: Sliver</li>
-    <li>Rule Creation Tool: Sigma</li>
+    <li>Simulate cybersecurity attack and defense roles</li>
+    <li>Set up a virtualized environment in VMware Workstation with Windows and Linux</li>
+    <li>Disabling Windows Defender via registry and system settings</li>
+    <li>Utilize Command Prompt, PowerShell, and Linux Terminal</li>
+    <li>Remote accessing VMs using SSH</li>
+    <li>Establish a C2 server with Sliver, deploying a payload on the victim machine</li>
+    <li>Analyze telemetry and EDR with Sysmon and LimaCharlie for detection and defense against Sliver</li>
+    <li>Detection & Response rule creation</li>
+    <li>Sigma rule creation and implementation</li>
   </ul>
 
-  <h2>Lima Charlie Overview</h2>
-  <p>Lima Charlie is introduced as a user-friendly cloud-based security tool that simplifies security monitoring without the need for complex integrations. Drawing comparisons with previous experiences in setting up ELK SIEM, the author notes the ease of Lima Charlie's setup and its convenience in filtering specific information.</p>
 
   <h2>Project Workflow</h2>
+  <p>Below is a summary of my steps with this SOC Analyst lab. Much of it mirrors Eric's blog series and incorporates any issues I encountered. If you want a complete step-by-step tutorial, follow along with the original blog. </p>
   <ol>
-    <li><strong>Creating C2 Payload on Linux VM</strong>
+    <li><strong>Environment Setup</strong>
       <ul>
-        <li>Using Sliver on the Linux machine to generate a C2 session payload.</li>
+        <li>I set up a SOC environment utilizing Linux Ubuntu Server as the attack machine as it is lighter weight than Kali to conserve resources and for practice using Terminal. A static IP was implemented for simplicity's sake and to ensure the SOC environments function in the future.  A test for functionality with the static IP can be seen below:</li>
         <li>Commands:
           <pre>
             sliver-server # starting the server
@@ -86,10 +91,9 @@
   </ol>
 
   <h2>Recommendations and Conclusion</h2>
-  <p>The blog post concludes with recommendations for analysts, emphasizing the importance of understanding native Windows processes to distinguish between normal and malicious activities. Constructive criticism is provided regarding event filtering in Lima Charlie, with potential improvements suggested for enhancing user experience.</p>
+  <p>This lab was well-designed and comprehensive. I highly recommend it. After completing the lab, I can confirm that Lima Charlie is a powerful tool, thanks to its extensive EDR functionality and long-term storage that is free of cost. </p>
 
-  <p>Feel free to refer to the original blog series for a detailed walkthrough and further insights.</p>
+  <p>After the lab, Lima Charlie would be a great solution to reduce telemetry overhead for my organization. However, it is essential to note that Lima Charlie is an EDR solution and not as powerful as traditional SIEMs. Therefore, implementing a hybrid solution combining Splunk and Lima Charlie would be the best approach. This approach would allow us to use Splunk for initial monitoring and utilize Lima Charlie for longer-term telemetry - giving us the best of both worlds. </p>
 
   <hr>
 
-  <p><em>Note: This README provides an overview of the GitHub project structure and content. Refer to the original blog series for detailed instructions and insights.</em></p>
