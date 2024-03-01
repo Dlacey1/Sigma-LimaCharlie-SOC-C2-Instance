@@ -1,6 +1,6 @@
 
 
-  <h1>SOC Attack and Detection with Lima Charlie, Sigma, & Sliver</h1>
+  <h1>SOC Attack and Detection with LimaCharlie, Sigma, & Sliver</h1>
 
   <h2>Introduction</h2>
   <p>Recently, to optimize telemetry storage costs for my organization, I began researching alternatives to traditional SIEMs, which led me to look into Lima Charlie. Lima Charlie is a solution that offers endpoint detection and response but with free storage for up to one year's worth of data. 
